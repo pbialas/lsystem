@@ -2,6 +2,7 @@
 
 import turtle
 
+
 class Lsystem:
 	def __init__(self, forward_symbols, rules, start, angle, heading=0):
 		self.fd = forward_symbols
@@ -22,7 +23,9 @@ class Lsystem:
 			base = new_base
 		return base
 
-	def draw(self, turtl, size, step):
+	def draw(self, size, step, turtl = None):
+		if not turtl:
+			turtl = franklinBegin()
 		base = self.get_step(step)
 		angle = self.angle
 		ls = []
