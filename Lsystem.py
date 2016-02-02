@@ -61,6 +61,8 @@ Koch = Lsystem(['F'], {'F': 'F+F-F-F+F'}, 'F', 90)
 Sierpinski = Lsystem(['A', 'B'], {'A': '+B-A-B+', 'B': '-A+B+A-'}, 'A', 60)
 Hilbert = Lsystem(['F'], {'X': '+YF-XFX-FY+', 'Y': '-XF+YFY+FX-'}, 'X', 90)
 Dragon_curve = Lsystem(['F'], {'X': 'X+YF+', 'Y': '-FX-Y'}, 'FX', 90)
+Gosper_curve = Lsystem(['A', 'B'], {'A': 'A-B--B+A++AA+B-',
+                                     'B': '+A-BB--B-A++A+B'}, 'A', 60)
 Fractal_plant = Lsystem(['F'], {'X': 'F-[[X]+X]+F[+FX]-X', 'F': 'FF'},
                         'FX', 25, heading = 90)
 
