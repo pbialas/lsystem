@@ -28,7 +28,7 @@ class Lsystem:
                           map(lambda x: x + 'c', F(base, colors)))
 		return base
 
-	def draw(self, size, step, colors = 0, turtl = None):
+	def draw(self, size, step, colors = 0, so_fast = False, turtl = None):
 		if not turtl:
 			turtl = franklinBegin()
 		base = self.get_step(step, colors = colors)
@@ -53,6 +53,9 @@ class Lsystem:
                                 0.3 + 0.7*random.random(),
                                 0.3 + 0.7*random.random())
 					turtl.color(newcolor, newcolor)
+			if not so_fast:
+				turtle.update()
+		turtle.update()
 
 Koch = Lsystem(['F'], {'F': 'F+F-F-F+F'}, 'F', 90)
 Sierpinski = Lsystem(['A', 'B'], {'A': '+B-A-B+', 'B': '-A+B+A-'}, 'A', 60)
@@ -69,4 +72,5 @@ def franklinBegin():
 		franklin = turtle.Turtle(visible = False)
 		franklin.color('green', 'green')
 		franklin.speed(0)
+		turtle.tracer(0, 0)
 		return franklin
