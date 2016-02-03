@@ -22,8 +22,10 @@ class Lsystem:
 					new_base += char
 			base = new_base
 		if colors:
+# Function F divides string into k substrings (creates list of substrings)
 			F = lambda ls, k: map(lambda j:ls[(j*len(ls))/k: ((j+1)*len(ls))/k],
                                   range(k))
+# Every substring in list is appended with 'c' - this later cause color change.
 			base = reduce(lambda x,y: x + y,
                           map(lambda x: x + 'c', F(base, colors)))
 		return base
